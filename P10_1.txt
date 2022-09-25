@@ -1,0 +1,9 @@
+a. Employee:superclass, Manager: subclass since every mangaer also is a empolyee
+b. GraduateStudent: subclass since every GraduateStudent also is a student , Student: superclass
+c. Person superclass, Student: subclass since every student also is a person 
+d. Employee: superclass, Professor: subclass since every mangaer aslo is empolyee
+e. BankAccount: superclass, CheckingAccount: since CheckingAccount also is a BankAccount
+f.  Vehicle: superclass, Car: subclass since car is a Vehicle
+g. Vehicle: superclass, Minivan: subclass since car is Vehicle
+h. Car: superclass, Minivan: subclass since Minivan is a form of car
+i.  Truck: subclass since truck is a form of Vehicle, Vehicle: superclass
