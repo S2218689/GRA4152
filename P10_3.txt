@@ -1,3 +1,0 @@
-the subclass inherits the deposit and getbalance methods from the superclass BankAccount
-the subclases overvrides the withdraw and monthEnd  methods from the superclass BankAccount
-the subclases adds the following method SetInterestRarte
