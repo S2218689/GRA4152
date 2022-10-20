@@ -1,6 +1,7 @@
 import numpy as np
 import random
 from sklearn.preprocessing import MinMaxScaler
+from csv import reader
 
 # This module defines the Dataset class and its subclass CsvDataset
 # A dataset has x and y-values, are row or column oriented, and can be scaled
@@ -29,6 +30,7 @@ class Dataset:
         # Scales the dataset if scaled is True
         if scaled:
             self._x = MinMaxScaler().fit_transform(x)
+        print(self._x)
 
         # Transposes the x-data if it is column oriented
         if rowOriented != True:
@@ -99,7 +101,13 @@ class Dataset:
 # A csv dataset generated numpy arrays based on a csv file
 class CsvDataSet(Dataset):
     def __init__(self, file, rowOriented = True, scaled = False):
-        data = np.genfromtxt(file, delimiter=",", dtype=np.float32)
+        data = []
+        with open(file, "r", newline="") as file:
+            csvReader = reader(file)
+            for row in csvReader:
+                data.append(row)
+
+        data = np.array(data, dtype=np.float32)
 
         # If CSV-data is column oriented it gets transposed
         if not rowOriented:
