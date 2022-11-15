@@ -117,14 +117,14 @@ class LM:
             res = f"y ~ {round(self.params[0], 2)}"
             for i, param in enumerate(self.params[1:]):
                 res += " + "
-                res += f"{round(param, 2)}*x{i + 1}"
+                res += f"{round(param, 2)}*x{self._covariates[i + 1]}"
             return res
 
         # If self._intercept is in model we return the model representation with the betas inplace of the letter b
         else:
             res = f"y ~ "
             for i, param in enumerate(self.params):
-                res += f"{round(param, 2)}*x{i} "
+                res += f"{round(param, 2)}*x{self._covariates[i]} "
             return res
 
     # summary method prints the Model summary with information about the model representation, fitted parameters and

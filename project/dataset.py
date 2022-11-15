@@ -30,8 +30,6 @@ class Dataset:
         # Scales the dataset if scaled is True
         if scaled:
             self._x = MinMaxScaler().fit_transform(x)
-        print(self._x)
-
         # Transposes the x-data if it is column oriented
         if rowOriented != True:
             self._x = self.transpose(self._x)
